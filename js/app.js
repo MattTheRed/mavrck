@@ -38,11 +38,11 @@ app.config(['$routeProvider', '$provide',
 // });
 
 app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
-    $scope.go= function (hash) {
-        $location.path(hash);
+    $scope.submitForm = function(isValid) {
+        if (isValid) {
+            $location.path('/products');
+        }
     };
-
-    $scope.stars = 3.2;
 }]);
 
 app.controller('ProductCtrl', ['$scope', function($scope) {
@@ -89,6 +89,25 @@ app.controller('ProductCtrl', ['$scope', function($scope) {
     $scope.search;
 
 }]);
+
+app.directive('overwriteEmail', function() {
+  var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@example\.com$/i;
+
+  return {
+    require: 'ngModel',
+    restrict: '',
+    link: function(scope, elm, attrs, ctrl) {
+      // only apply the validator if ngModel is present and Angular has added the email validator
+      if (ctrl && ctrl.$validators.email) {
+
+        // this will overwrite the default Angular email validator
+        ctrl.$validators.email = function(modelValue) {
+          return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
+        };
+      }
+    }
+  };
+});
 
 app.directive('starReviews', function() {
     return {
