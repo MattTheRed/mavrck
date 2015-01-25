@@ -1,1 +1,27 @@
-product list
+
+<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 box">
+        <h1>Products</h1>
+        <div class="search-bar">
+            <span class="input-group">
+                <input type="text" class="form-control" placeholder="Search by keyword" ng-model="search.title">
+                <select ng-model="search.category" ng-options="option for option in ['mens', 'womens']"></select>{{genderOptions}}
+                <star-filter selection="search.stars" change="activateSearch" sort-function="changeSort" sort="sort">
+                </star-filter>
+            </span>
+        </div>
+        <div ng-repeat="product in products | filter:search:strict" class="product-box">
+            <img ng-src="{{product.image}}" alt="{{product.title}}">
+            <div class="details">
+                <h3>{{product.title}}</h3>
+                <star-reviews rating-value="product.stars"></star-reviews>
+            </div>
+            <div class="price">
+                <h2>${{product.price}}</h2>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="star-box">
+    <div class="star-wrapper" ng-repeat="star in stars track by $index">
+        <div class="inner-star" style="width: {{star}}%;"></div>
+        <div class="star">&#9733;</div>
+    </div>
+    <span class="rating ng-binding" style="padding-left:0px">{{ratingValue| number: 2}}</span>
+</div>

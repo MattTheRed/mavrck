@@ -12,6 +12,7 @@ body {
     text-align:center;
     color:#333E48;
 }
+
 .box h1 {
     margin-bottom:40px;
 }
@@ -30,4 +31,192 @@ body {
     border-radius:0;
     padding:20px 10px;
     font-size:18px;
+}
+
+.product-box {
+    text-align:left;
+    padding:15px;
+    border-bottom:1px dashed #ccc;
+
+}
+
+.product-box:hover {
+    background-color:#fafafa;
+}
+.product-box img {
+    display:inline-block;
+    width:120px;
+    height:120px;
+    border-radius:60px;
+    padding:4px;
+    border:2px solid #758899;
+}
+
+.product-box .details {
+    display:inline-block;
+    text-align:left;
+    margin-left:30px;
+    width:70%;
+}
+
+.product-box .price {
+    display:inline-block;
+    font-size:30px;
+    margin-left:30px;
+    vertical-align:top;
+    text-align:right;
+    color:rgb(0, 187, 227);
+    float:right;
+}
+
+/* Star Review Directive */
+.star-box {
+  display:inline-block;
+}
+.star-box .rating{
+  padding-left:6px;
+  font-size:22px;
+  font-weight:bold;
+  color:rgb(0, 187, 227);
+}
+.star-wrapper {
+  position: relative;
+  height:20px;
+  width:20px;
+  color:#fff;
+  display:inline-block;
+  font-size:15px;
+  background-color:#e2e2e2;
+  background: 50% auto;
+  border-radius:10px;
+  line-height:20px;
+  margin-right:3px;
+  display:inline-block;
+  overflow: hidden;
+}
+.star-wrapper .inner-star {
+  border-radius:3px 0 0 3px;
+  position: absolute;
+  left:0;
+  z-index:1;
+  background-color:rgb(0, 187, 227);
+  height:20px;
+}
+
+.star {
+  position:inherit;
+  z-index:10;
+  text-align:center;
+  height:20px;
+  width:20px;
+}
+
+
+/* Filters */
+
+.search-bar {
+    background-color: #34495e;
+}
+
+.search-bar .filter {
+/*    background-color:#34495e;*/
+    display:inline-block;
+    color:#fff;
+    border-right: 2px solid #2a3b4c;
+    min-height:50px;
+    padding-right:.5em;
+    font-weight:400;
+    font-size:.9em;
+    line-height: 300%;
+    padding-left:10px;
+    padding-right:10px;
+    opacity: 0.8;
+}
+
+.search-bar .filter .options .option {
+    border-bottom: 1px solid #ececec;
+}
+
+.search-bar .filter .glassdoor .star-wrapper .inner-star {
+    z-index:20;
+}
+.search-bar .filter .glassdoor .star-wrapper .star {
+    z-index:25;
+}
+.search-bar .filter .glassdoor .rating {
+    display:none;
+}
+
+.search-bar .filter .glassdoor .powered-by {
+    text-align:center;
+}
+.search-bar .filter .glassdoor .powered-by a {
+    color: #666;
+    font-size:.8em;
+}
+.search-bar .filter .open-source i {
+    padding-right:.4em;
+}
+
+/*.search-bar .filter i {
+    font-size:1.2em;
+}*/
+
+.search-bar .filter .options {
+    /*width:100%;*/
+    color: #34495e;
+    position: absolute;
+    margin-left: -11px;
+    margin-right: -11px;
+    margin-top:3px;
+    border: 1px solid #ccc;
+    border-top:0;
+/*    left:0;*/
+    z-index: 15;
+    background-color:#fff;
+    display:block;
+}
+.search-bar .filter .more-filters {
+    margin-left:-110px;
+    width:200px;
+    text-align:left;
+}
+
+.search-bar .filter .more-filters i {
+    padding-right: .4em;
+}
+
+.search-bar .filter .more-filters .suggest {
+    background-color: #ec6357;
+    color: #fff;
+    padding-left:.8em;
+}
+
+.search-bar .filter .more-filters .suggest i {
+    padding-right:.4em;
+}
+
+.search-bar .filter .options .active {
+    background-color: rgb(249, 249, 250);
+}
+.search-bar .filter:hover {
+    background-color:#405871;
+    opacity: 1;
+}
+.search-bar .filter:hover > .options {
+    display:block;
+}
+
+.search-bar .filter .dropdown {
+    display:inline-block;
+/*    width:24px;*/
+    font-size:1em;
+    text-align:left;
+}
+
+.search-bar .filter .options .option {
+    padding-left:.8em;
+}
+.search-bar .filter .options .option:hover {
+    background-color: rgb(249, 249, 250);
 }
