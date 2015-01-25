@@ -1,0 +1,33 @@
+body {
+    background-color: #333E48;
+    color:#fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.box {
+    background-color:#fff;
+    border-top:3px solid rgb(0, 187, 227);
+    margin-top:100px;
+    padding:30px 30px;
+    text-align:center;
+    color:#333E48;
+}
+.box h1 {
+    margin-bottom:40px;
+}
+
+.form-control {
+    margin-bottom:20px;
+    border-radius:0;
+    border:1px solid #ccc;
+    padding: 20px 10px;
+    font-size:18px;
+}
+
+.btn-primary {
+    background-color:rgb(0, 187, 227);
+    border:0;
+    border-radius:0;
+    padding:20px 10px;
+    font-size:18px;
+}
