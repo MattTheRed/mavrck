@@ -6,11 +6,11 @@ app.config(['$routeProvider',
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
       }).
-      when('/product', {
+      when('/products', {
         templateUrl: 'templates/products_list.html',
         controller: 'ProductCtrl'
       }).
-      when('/product/:productId', {
+      when('/products/:productId', {
         templateUrl: 'templates/product_detail.html',
         controller: 'ProductCtrl'
       }).
@@ -19,7 +19,10 @@ app.config(['$routeProvider',
       });
   }]);
 
-app.controller('LoginCtrl', ['$scope', function($scope) {
+app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
+    $scope.go= function (hash) {
+        $location.path(hash);
+    };
 
 
 }]);
