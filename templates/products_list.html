@@ -6,13 +6,13 @@
         <h1>Products</h1>
         <div class="search-bar">
             <span class="input-group">
-                <input type="text" class="form-control" placeholder="Search by keyword" ng-model="search.title">
-                <select ng-model="search.category" ng-options="option for option in ['mens', 'womens']"></select>{{genderOptions}}
+                <input type="text" class="" placeholder="Search by keyword" ng-model="search.title">
+                <select ng-model="search.category" ng-options="option for option in ['mens', 'women']"></select>{{genderOptions}}
                 <star-filter selection="search.stars" change="activateSearch" sort-function="changeSort" sort="sort">
                 </star-filter>
             </span>
         </div>
-        <div ng-repeat="product in products | filter:search:strict" class="product-box">
+        <a ng-repeat="product in products | filter:search:strict" class="product-box" href="/#/products/{{product.id}}">
             <img ng-src="{{product.image}}" alt="{{product.title}}">
             <div class="details">
                 <h3>{{product.title}}</h3>
@@ -21,7 +21,7 @@
             <div class="price">
                 <h2>${{product.price}}</h2>
             </div>
-        </div>
+        </a>
       </div>
     </div>
 </div>

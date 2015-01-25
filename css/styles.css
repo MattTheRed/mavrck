@@ -11,6 +11,7 @@ body {
     padding:30px 30px;
     text-align:center;
     color:#333E48;
+    margin-bottom:100px;
 }
 
 .box h1 {
@@ -37,12 +38,14 @@ body {
     text-align:left;
     padding:15px;
     border-bottom:1px dashed #ccc;
-
+    display:block;
 }
 
 .product-box:hover {
     background-color:#fafafa;
+    text-decoration: none
 }
+
 .product-box img {
     display:inline-block;
     width:120px;

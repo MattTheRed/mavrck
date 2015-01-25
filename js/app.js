@@ -1,6 +1,9 @@
-var app = angular.module('mavrck', ['ngRoute']);
-app.config(['$routeProvider',
-  function($routeProvider) {
+var app = angular.module('mavrck', ['ngRoute']); //'ngMockE2E'
+
+app.config(['$routeProvider', '$provide',
+  function($routeProvider, $provide) {
+    // $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
+
     $routeProvider.
       when('/login', {
         templateUrl: 'templates/login.html',
@@ -17,7 +20,22 @@ app.config(['$routeProvider',
       otherwise({
         redirectTo: '/login'
       });
-  }]);
+}]);
+
+// app.run(function($httpBackend) {
+//     console.log("hello");
+//   // // returns the current list of phones
+//   // $httpBackend.whenGET('/phones').respond(phones);
+
+//   // // adds a new phone to the phones array
+//   // $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
+//   //   var phone = angular.fromJson(data);
+//   //   phones.push(phone);
+//   //   return [200, phone, {}];
+//   // });
+
+//     $httpBackend.whenGET(/^\/templates\//).passThrough();
+// });
 
 app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
     $scope.go= function (hash) {
@@ -25,8 +43,6 @@ app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) 
     };
 
     $scope.stars = 3.2;
-
-
 }]);
 
 app.controller('ProductCtrl', ['$scope', function($scope) {
@@ -57,7 +73,7 @@ app.controller('ProductCtrl', ['$scope', function($scope) {
             description: 'Shoulder(cm) :S:37cm M:37.5cm L:38cm XL:38.5cm Bust(cm) :S:84cm M:88cm L:92cm XL:96cm Length (cm) :S:80cm M:81cm L:82cm XL:83cm Sleeve Length(cm) :S:49cm M:50cm L:51cm XL:52cm Size Available :S,M,L,XL',
             price: '79.99',
             stars: 3.4,
-            category: 'womens'
+            category: 'women'
         },
         {
             id: 4,
@@ -66,7 +82,7 @@ app.controller('ProductCtrl', ['$scope', function($scope) {
             description: 'Material:Cotton,Polyester',
             price: '39.99',
             stars: 2.8,
-            category: 'womens'
+            category: 'women'
         }
     ];
 
