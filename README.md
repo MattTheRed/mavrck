@@ -24,10 +24,10 @@ Login Page requirements:
 
 Product Page Requirements:
 - Navigation with
--~~(1) search field that filters products based on keyword search;~~
--(2) filter for mens and women's products;
--~~(3) shopping cart icon displaying number of items in the cart.~~
-- ~~4 products, each with an image, title, short description, price, 1-to-5 star rating and category (men's || women's).~~
+  - ~~(1) search field that filters products based on keyword search;~~
+  - ~~(2) filter for mens and women's products;~~
+  - ~~(3) shopping cart icon displaying number of items in the cart.~~
+  - ~~4 products, each with an image, title, short description, price, 1-to-5 star rating and category (men's || women's).~~
 - The customer should be able to:
   - ~~(1) filter the products by price, rating or category;~~
     - ~~price filter should be ranges, break into separate filter~~
