@@ -11,7 +11,7 @@
                 <a ng-click="clearSearch()" ng-show="search.category || search.stars">Clear</a>
             </span>
         </div>
-        <a ng-repeat="product in products | filter:search:strict" class="product-box" href="/#/products/{{product.id}}">
+        <a ng-repeat="product in products | filter:search:strict | filter:stars:4.0" class="product-box" href="/#/products/{{product.id}}">
             <img ng-src="{{product.image}}" alt="{{product.title}}">
             <div class="details">
                 <h3>{{product.title}}</h3>

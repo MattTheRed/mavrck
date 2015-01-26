@@ -109,7 +109,7 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
     };
 
     $scope.addComment = function (id,comment) {
-      console.log('hello');
+
       if (!$rootScope.$storage.comments) {
         $rootScope.$storage.comments = {};
       }

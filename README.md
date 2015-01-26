@@ -1,30 +1,11 @@
 MAVRCK CODE CHALLENGE
 ===============================
 
+Clone the repo, make sure you have node installed and run:
 
 ```
 http-server
 ```
-
-
-
-    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-
-
-
-
-
-
-
-
-id,
-image,
-description
-price
-stars
-category
-
-
 
 
 Requirements
@@ -37,7 +18,7 @@ X -- (2) product page. You should build the marketplace so that it may accept a 
 X -- Form with input fields for a username, password and login button.
 X -- The form should accept any username between 4-20 characters and any password 8-20 characters.
 X -- The username entered on the login form should be saved and re-displayed on the navigation/menu of the product page, next to the shopping cart icon
- --- Move user details to a sevice + use locationStorage for persisistence
+X --- Move user details to a sevice + use locationStorage for persisistence
   -- UX: Style the validation errors
 - Product Page Requirements:
 -- Navigation with
@@ -49,8 +30,8 @@ X -- The customer should be able to: (1) filter the products by price, rating or
     - price filter should be ranges, break into separate filter
     - star filter should be >, break into separate filter
 X --(2) add a product to a cart which increments count in the navigation;
---(3) rate the product on a 1-to-5 star scale;
-  (4) leave a comment on a product.
+  --(3) rate the product on a 1-to-5 star scale;
+X  (4) leave a comment on a product.
 -Bonus Items:
 -- Including unit tests using Karma or Jasmine
 -- Adding to cart changes a Favicon to show the number of items in the cart
