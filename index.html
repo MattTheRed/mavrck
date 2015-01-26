@@ -25,8 +25,12 @@
               <a class="navbar-brand" href="/#/products">TurboStore5000</a>
 
             </div>
+                <form ng-submit="doSearch(keywords)" ng-controller="SearchFormCtrl">
+                <input type="text" placeholder="Search by Keyword" ng-model="keywords">
+                <input type="submit" style="display:none">
+               </form>
             <ul class="nav navbar-nav">
-                <input type="text" placeholder="Search by Keyword">
+
                 <li>
                   <a href="/#/products?category=mens">Mens</a>
                 </li>

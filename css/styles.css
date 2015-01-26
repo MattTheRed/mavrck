@@ -53,7 +53,16 @@ right: 29px;
     margin-bottom:40px;
 }
 
-
+.navbar input {
+      border-radius:0;
+    border:1px solid #ccc;
+    padding: 8px 10px;
+    margin-top:3px;
+    font-size:18px;
+    float:left;
+    margin-right:20px;
+    color:#222;
+}
 
 .form-control {
     margin-bottom:20px;

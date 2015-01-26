@@ -66,7 +66,12 @@ app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', '$localStorage
     };
 }]);
 
-
+app.controller('SearchFormCtrl', ['$scope', '$location', function($scope, $location) {
+  $scope.doSearch = function (keywords) {
+    console.log(keywords);
+    $location.path('/products').search({'q': keywords});
+  };
+}]);
 
 app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product', '$localStorage',
   function($scope, $rootScope, $routeParams, Product, $localStorage) {
@@ -79,6 +84,7 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
       $rootScope.$storage.itemCount++;
     };
 
+
     if ($routeParams.productId) {
       Product.get($routeParams.productId).then(function(data){
         $scope.product = data;
@@ -87,11 +93,13 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
       Product.query().then(function(data) {
           $scope.products = data;
       });
+      if (!$scope.search) {
+        $scope.search = {};
+      }
       if ($routeParams.category) {
-        if (!$scope.search) {
-          $scope.search = {};
-        }
         $scope.search.category = $routeParams.category;
+      } else if ($routeParams.q) {
+        $scope.search.title = $routeParams.q;
       }
     }
 }]);
