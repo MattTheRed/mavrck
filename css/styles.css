@@ -25,14 +25,20 @@ body {
 }
 .count {
   z-index:1;
-  position: absolute;
-  top: 24px;
-  right:38px;
+position: relative;
+top: -13px;
+right: 36px;
   color:#333E48;
   font-weight: bold;
   font-size:18px;
 }
 
+.cart {
+  display:inline-block;
+}
+.user {
+  display:inline-block;
+}
 .box {
     background-color:#fff;
     border-top:3px solid rgb(0, 187, 227);
