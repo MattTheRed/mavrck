@@ -69,6 +69,14 @@ app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', function($scop
 
 app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product',
   function($scope, $rootScope, $routeParams, Product) {
+    if (!$rootScope.itemCount) {
+        $rootScope.itemCount = 0;
+    }
+
+    $scope.buy = function() {
+      $rootScope.itemCount++;
+    };
+
     if ($routeParams.productId) {
       Product.get($routeParams.productId).then(function(data){
         console.log('here');
