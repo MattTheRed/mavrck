@@ -1,16 +1,14 @@
-{{search}}
-{{products2}}
-{{$storage.itemCount}}
 <div class="container">
     <div class="row">
       <div class="col-md-12 box">
-        <h1>Products</h1>
         <div class="search-bar">
             <span class="input-group">
-                <input type="text" class="" placeholder="Search by keyword" ng-model="search.title">
-                <select ng-model="search.category" ng-options="option for option in ['mens', 'women']"></select>{{genderOptions}}
+                <strong>Filter By:</strong>
+                <select ng-model="search.category" ng-options="option for option in ['mens', 'women']"></select>
+                <select ng-model="search.price" ng-options="option.price for option in products"></select>
                 <star-filter selection="search.stars" change="activateSearch" sort-function="changeSort" sort="sort">
                 </star-filter>
+                <a ng-click="clearSearch()" ng-show="search.category || search.stars">Clear</a>
             </span>
         </div>
         <a ng-repeat="product in products | filter:search:strict" class="product-box" href="/#/products/{{product.id}}">

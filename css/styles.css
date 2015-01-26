@@ -83,7 +83,7 @@ right: 29px;
 .product-box {
     text-align:left;
     padding:15px;
-    border-bottom:1px dashed #ccc;
+    border-bottom:1px dashed ;
     display:block;
 }
 
@@ -175,14 +175,27 @@ right: 29px;
 /* Filters */
 
 .search-bar {
-    background-color: #34495e;
+   /* background-color: #fafafa;*/
+    border-bottom:1px solid #ccc;
+}
+
+.search-bar select {
+    border-radius:0;
+    border:1px solid #ccc;
+    padding: 8px 10px;
+    margin-top:3px;
+    font-size:18px;
+    border-radius:0;
+    margin-right:20px;
+    color:#222;
+    margin-left:20px;
 }
 
 .search-bar .filter {
 /*    background-color:#34495e;*/
     display:inline-block;
-    color:#fff;
-    border-right: 2px solid #2a3b4c;
+    /*color:#fff;*/
+    /*border-right: 2px solid #2a3b4c;*/
     min-height:50px;
     padding-right:.5em;
     font-weight:400;

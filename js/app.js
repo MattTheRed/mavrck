@@ -75,6 +75,7 @@ app.controller('SearchFormCtrl', ['$scope', '$location', function($scope, $locat
 
 app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product', '$localStorage',
   function($scope, $rootScope, $routeParams, Product, $localStorage) {
+
     $rootScope.$storage = $localStorage;
     if (!$rootScope.$storage.itemCount) {
         $rootScope.$storage.itemCount = 0;
@@ -102,6 +103,10 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
         $scope.search.title = $routeParams.q;
       }
     }
+
+    $scope.clearSearch = function() {
+      $scope.search = {};
+    };
 }]);
 
 app.directive('overwriteEmail', function() {
@@ -161,15 +166,12 @@ app.directive('starFilter', function() {
             0,
              4, 3, 2, 1
         ];
-
+        console.log(scope.selection);
         scope.select = function (option) {
-            trackEvent("Filtered Results", {
-                "filter": "Glassdoor",
-                "value": option
-            });
+          console.log("worked");
             scope.selection = option;
             scope.showDropdown = false;
-            scope.change(true);
+
         };
 
         scope.changeSort = function(field) {
