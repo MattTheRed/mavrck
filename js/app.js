@@ -137,6 +137,9 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
       $scope.search = {};
     };
 
+    $scope.comment = {
+      stars:0
+    };
     $scope.addComment = function (id,comment) {
 
       if (!$rootScope.$storage.comments) {

@@ -14,13 +14,20 @@
             <button type="submit" class="btn btn-primary" ng-click="buy()">Buy Now</button>
 
         </div>
+        <div style="clear:both"></div>
         <div class="comments">
-            <form ng-submit="addComment(product.id, comment); comment = ''">
-            <textarea class="form-control" ng-model="comment"></textarea><br>
+            <form ng-submit="addComment(product.id, comment); comment = {}">
+            <div class="search-bar">
+            <strong>Rate this product:</strong> <star-filter selection="comment.stars" change="activateSearch" sort-function="changeSort" sort="sort">
+                </star-filter>
+            </div>
+            <textarea class="form-control" ng-model="comment.comment"></textarea><br>
+
             <button type="submit" class="btn btn-primary comment-button">Comment</button>
             </form>
             <div class="comment-box" ng-repeat="comment in $storage.comments[product.id]">
-                {{comment}}
+                <star-reviews rating-value="comment.stars"></star-reviews><br>
+                {{comment.comment}}
             </div>
         </div>
       </div>

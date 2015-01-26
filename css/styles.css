@@ -288,7 +288,7 @@ right: 29px;
     background-color: rgb(249, 249, 250);
 }
 .search-bar .filter:hover {
-    background-color:#405871;
+    background-color:#ccc;
     opacity: 1;
 }
 .search-bar .filter:hover > .options {
