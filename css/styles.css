@@ -171,7 +171,22 @@ right: 29px;
   width:20px;
 }
 
+.comments {
+  background-color:#fafafa;
+  padding:20px;
+  margin-top:50px;
+  text-align:left;
+}
 
+.comment-box {
+  border-top:1px dashed #ccc;
+  padding:20px;
+}
+
+.comment-button {
+  text-align:center;
+  margin-bottom:30px;
+}
 /* Filters */
 
 .search-bar {

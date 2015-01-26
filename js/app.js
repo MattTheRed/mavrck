@@ -107,6 +107,21 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
     $scope.clearSearch = function() {
       $scope.search = {};
     };
+
+    $scope.addComment = function (id,comment) {
+      console.log('hello');
+      if (!$rootScope.$storage.comments) {
+        $rootScope.$storage.comments = {};
+      }
+
+      if (!$rootScope.$storage.comments[id]) {
+        $rootScope.$storage.comments[id] = [];
+      }
+
+      $rootScope.$storage.comments[id].push(comment);
+
+
+    };
 }]);
 
 app.directive('overwriteEmail', function() {

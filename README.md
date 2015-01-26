@@ -45,10 +45,12 @@ X ---(1) search field that filters products based on keyword search;
  ---(2) filter for mens and women's products;
 X ---(3) shopping cart icon displaying number of items in the cart.
 X -- 4 products, each with an image, title, short description, price, 1-to-5 star rating and category (men's || women's).
--- The customer should be able to: (1) filter the products by price, rating or category;
+X -- The customer should be able to: (1) filter the products by price, rating or category;
+    - price filter should be ranges, break into separate filter
+    - star filter should be >, break into separate filter
 X --(2) add a product to a cart which increments count in the navigation;
 --(3) rate the product on a 1-to-5 star scale;
-X (4) leave a comment on a product.
+  (4) leave a comment on a product.
 -Bonus Items:
 -- Including unit tests using Karma or Jasmine
 -- Adding to cart changes a Favicon to show the number of items in the cart

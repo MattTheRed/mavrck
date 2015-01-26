@@ -12,6 +12,16 @@
                 <h2>${{product.price}}</h2>
             </div>
             <button type="submit" class="btn btn-primary" ng-click="buy()">Buy Now</button>
+
+        </div>
+        <div class="comments">
+            <form ng-submit="addComment(product.id, comment); comment = ''">
+            <textarea class="form-control" ng-model="comment"></textarea><br>
+            <button type="submit" class="btn btn-primary comment-button">Comment</button>
+            </form>
+            <div class="comment-box" ng-repeat="comment in $storage.comments[product.id]">
+                {{comment}}
+            </div>
         </div>
       </div>
     </div>
