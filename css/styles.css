@@ -4,6 +4,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.navbar-default {
+  background-color:#29323A;
+  border:0;
+  border-radius:0;
+  color:#fff;
+}
+.navbar-default .navbar-brand {
+  color:#fff;
+}
+
 .box {
     background-color:#fff;
     border-top:3px solid rgb(0, 187, 227);
@@ -72,6 +82,17 @@ body {
     float:right;
 }
 
+.product-detail {
+  text-align:center;
+}
+
+.product-detail img {
+  float:left;
+}
+
+.product-detail .details {
+  text-align:left;
+}
 /* Star Review Directive */
 .star-box {
   display:inline-block;

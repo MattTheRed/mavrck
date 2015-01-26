@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Original Penguin Mens Long-Sleeve Oxford Shirt",
+        "image": "http://ecx.images-amazon.com/images/I/41J42jA4jXL._AA160_.jpg",
+        "description": "60% Cotton/40% Polyester. Imported. Machine Wash. Button-front shirt featuring point collar, logo embroidery at chest, and long sleeves.Shirttail hem",
+        "price": 89.99,
+        "stars": 4.5,
+        "category": "mens"
+    },
+    {
+        "id": 2,
+        "title": "Calvin Klein Mens Non-Iron Slim-Fit Dress Shirt",
+        "image": "http://ecx.images-amazon.com/images/I/51Lt3WDD5JL._AA160_.jpg",
+        "description": "60% Cotton/40% Polyester. Imported. Machine Wash. Button-front shirt featuring point collar, logo embroidery at chest, and long sleeves.Shirttail hem",
+        "price": 56.99,
+        "stars": 3.2,
+        "category": "mens"
+    },
+    {
+        "id": 3,
+        "title": "Sheinside Womens Striped Three Quarter Length Sleeve Stripe Dress",
+        "image": "http://ecx.images-amazon.com/images/I/41geH8IsrBL._SL246_SX190_CR0,0,190,246_.jpg",
+        "description": "Shoulder(cm) :S:37cm M:37.5cm L:38cm XL:38.5cm Bust(cm) :S:84cm M:88cm L:92cm XL:96cm Length (cm) :S:80cm M:81cm L:82cm XL:83cm Sleeve Length(cm) :S:49cm M:50cm L:51cm XL:52cm Size Available :S,M,L,XL",
+        "price": 79.99,
+        "stars": 3.4,
+        "category": "women"
+    },
+    {
+        "id": 4,
+        "title": "Lovaru Womens Dark Blue Garment Casual Polka Dot Print Chiffon Vestidos Dress",
+        "image": "http://ecx.images-amazon.com/images/I/413%2BbGpV6UL._SL246_SX190_CR0,0,190,246_.jpg",
+        "description":"Material:Cotton,Polyester",
+        "price": 39.99,
+        "stars": 2.8,
+        "category": "women"
+    }
+]

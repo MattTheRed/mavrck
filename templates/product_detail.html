@@ -1,8 +1,18 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12 box">
-        <h1>Products</h1>
-sdssd
+        <div class="product-detail">
+            <h1>{{product.title}}</h1>
+            <img ng-src="{{product.image}}" alt="{{product.title}}">
+            <div class="details">
+                <star-reviews rating-value="product.stars"></star-reviews>
+                <p>{{product.description}}</p>
+            </div>
+            <div class="price">
+                <h2>${{product.price}}</h2>
+            </div>
+            <button type="submit" class="btn btn-primary">Buy Now</button>
+        </div>
       </div>
     </div>
 </div>

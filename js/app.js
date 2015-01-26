@@ -1,9 +1,7 @@
-var app = angular.module('mavrck', ['ngRoute']); //'ngMockE2E'
+var app = angular.module('mavrck', ['ngRoute', 'ngResource', 'ngStorage']); //'ngMockE2E'
 
 app.config(['$routeProvider', '$provide',
   function($routeProvider, $provide) {
-    // $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
-
     $routeProvider.
       when('/login', {
         templateUrl: 'templates/login.html',
@@ -22,72 +20,65 @@ app.config(['$routeProvider', '$provide',
       });
 }]);
 
-// app.run(function($httpBackend) {
-//     console.log("hello");
-//   // // returns the current list of phones
-//   // $httpBackend.whenGET('/phones').respond(phones);
-
-//   // // adds a new phone to the phones array
-//   // $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
-//   //   var phone = angular.fromJson(data);
-//   //   phones.push(phone);
-//   //   return [200, phone, {}];
-//   // });
-
-//     $httpBackend.whenGET(/^\/templates\//).passThrough();
+// This is the version of the service we could use with a real API
+// app.factory("Product", function($resource) {
+//   return $resource("/api/products/:id");
 // });
 
-app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
+app.factory('Product', function($http) {
+  var json = $http.get('products.json').then(function(response) {
+    return response.data;
+  });
+
+  var Product = function(data) {
+    if (data) angular.copy(data, this);
+  };
+
+  Product.query = function() {
+    return json.then(function(data) {
+      return data.map(function(product) {
+        return new Product(product);
+      });
+    });
+  };
+
+  Product.get = function(id) {
+    return json.then(function(data) {
+      var result = null;
+      angular.forEach(data, function(product) {
+        if (product.id == id) result = new Product(product);
+      });
+      return result;
+    });
+  };
+
+  return Product;
+});
+
+
+app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
     $scope.submitForm = function(isValid) {
         if (isValid) {
+            $rootScope.user = $scope.user;
             $location.path('/products');
         }
     };
 }]);
 
-app.controller('ProductCtrl', ['$scope', function($scope) {
-    // TODO: move this to a service
-    $scope.products = [
-        {
-            id: 1,
-            title: 'Original Penguin Mens Long-Sleeve Oxford Shirt',
-            image: 'http://ecx.images-amazon.com/images/I/41J42jA4jXL._AA160_.jpg',
-            description: '60% Cotton/40% Polyester. Imported. Machine Wash. Button-front shirt featuring point collar, logo embroidery at chest, and long sleeves.Shirttail hem',
-            price: '89.99',
-            stars: 4.5,
-            category: 'mens'
-        },
-        {
-            id: 2,
-            title: 'Calvin Klein Mens Non-Iron Slim-Fit Dress Shirt',
-            image: 'http://ecx.images-amazon.com/images/I/51Lt3WDD5JL._AA160_.jpg',
-            description: '60% Cotton/40% Polyester. Imported. Machine Wash. Button-front shirt featuring point collar, logo embroidery at chest, and long sleeves.Shirttail hem',
-            price: '56.99',
-            stars: 3.2,
-            category: 'mens'
-        },
-        {
-            id: 3,
-            title: 'Sheinside Womens Striped Three Quarter Length Sleeve Stripe Dress',
-            image: 'http://ecx.images-amazon.com/images/I/41geH8IsrBL._SL246_SX190_CR0,0,190,246_.jpg',
-            description: 'Shoulder(cm) :S:37cm M:37.5cm L:38cm XL:38.5cm Bust(cm) :S:84cm M:88cm L:92cm XL:96cm Length (cm) :S:80cm M:81cm L:82cm XL:83cm Sleeve Length(cm) :S:49cm M:50cm L:51cm XL:52cm Size Available :S,M,L,XL',
-            price: '79.99',
-            stars: 3.4,
-            category: 'women'
-        },
-        {
-            id: 4,
-            title: 'Lovaru Womens Dark Blue Garment Casual Polka Dot Print Chiffon Vestidos Dress',
-            image: 'http://ecx.images-amazon.com/images/I/413%2BbGpV6UL._SL246_SX190_CR0,0,190,246_.jpg',
-            description: 'Material:Cotton,Polyester',
-            price: '39.99',
-            stars: 2.8,
-            category: 'women'
-        }
-    ];
 
-    $scope.search;
 
+app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product',
+  function($scope, $rootScope, $routeParams, Product) {
+    if ($routeParams.productId) {
+      Product.get($routeParams.productId).then(function(data){
+        console.log('here');
+        $scope.product = data;
+      });
+    } else {
+      Product.query().then(function(data) {
+          $scope.products = data;
+      });
+    }
 }]);
 
 app.directive('overwriteEmail', function() {

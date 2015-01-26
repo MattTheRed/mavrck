@@ -37,6 +37,7 @@ X -- (1) login page
 X -- Form with input fields for a username, password and login button.
 X -- The form should accept any username between 4-20 characters and any password 8-20 characters.
 X -- The username entered on the login form should be saved and re-displayed on the navigation/menu of the product page, next to the shopping cart icon
+ --- Move user details to a sevice + use locationStorage for persisistence
   -- UX: Style the validation errors
 - Product Page Requirements:
 -- Navigation with (1) search field that filters products based on keyword search; (2) filter for mens and women's products; (3) shopping cart icon displaying number of items in the cart.
