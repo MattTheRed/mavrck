@@ -13,8 +13,8 @@ Requirements
 Please build a basic marketplace with two web pages using AngularJS, Bootstrap, and HTML5/CSS3. The required pages include:
 - ~~(1) login page~~
 - ~~(2) product page. You should build the marketplace so that it may accept a RESTful API endpoint, that has hard a coded /products route that you design.~~
-- It should also be responsive to mobile browsers.
-
+- ~~It should also be responsive to mobile browsers.~~
+-- Update the header navigation; hide/show the menu
 Login Page requirements:
 - ~~Form with input fields for a username, password and login button.~~
 - ~~The form should accept any username between 4-20 characters and any password 8-20 characters.~~
@@ -30,11 +30,10 @@ Product Page Requirements:
 - ~~4 products, each with an image, title, short description, price, 1-to-5 star rating and category (men's || women's).~~
 - The customer should be able to:
   - ~~(1) filter the products by price, rating or category;~~
-    - price filter should be ranges, break into separate filter
-    - star filter should be >, break into separate filter
+    - ~~price filter should be ranges, break into separate filter~~
+    - ~~star filter should be >, break into separate filter~~
   - ~~(2) add a product to a cart which increments count in the navigation;~~
-
-  -(3) rate the product on a 1-to-5 star scale;
+  - (3) rate the product on a 1-to-5 star scale;
   - ~~(4) leave a comment on a product.~~
 
 Bonus Items:

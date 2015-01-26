@@ -5,13 +5,13 @@
             <span class="input-group">
                 <strong>Filter By:</strong>
                 <select ng-model="search.category" ng-options="option for option in ['mens', 'women']"></select>
-                <select ng-model="search.price" ng-options="option.price for option in products"></select>
-                <star-filter selection="search.stars" change="activateSearch" sort-function="changeSort" sort="sort">
+                <select ng-model="priceFilter" ng-options="option for option in [25,50,75,100]"></select>
+                <star-filter selection="starFilter" change="activateSearch" sort-function="changeSort" sort="sort">
                 </star-filter>
-                <a ng-click="clearSearch()" ng-show="search.category || search.stars">Clear</a>
+                <a ng-click="clearSearch()" ng-show="search.category || priceFilter || starFilter">Clear</a>
             </span>
         </div>
-        <a ng-repeat="product in products | filter:search:strict | filter:stars:4.0" class="product-box" href="/#/products/{{product.id}}">
+        <a ng-repeat="product in products | filter:search:strict | priceGT:priceFilter | starGT:starFilter" class="product-box" href="/#/products/{{product.id}}">
             <img ng-src="{{product.image}}" alt="{{product.title}}">
             <div class="details">
                 <h3>{{product.title}}</h3>

@@ -55,6 +55,35 @@ app.factory('Product', function($http) {
   return Product;
 });
 
+app.filter('priceGT', function () {
+    return function ( items, value ) {
+        if (!value) {
+          return items;
+        }
+        var filteredItems = [];
+        angular.forEach(items, function ( item ) {
+            if ( item.price > value ) {
+                filteredItems.push(item);
+            }
+        });
+        return filteredItems;
+    };
+});
+
+app.filter('starGT', function () {
+    return function ( items, value ) {
+        if (!value) {
+          return items;
+        }
+        var filteredItems = [];
+        angular.forEach(items, function ( item ) {
+            if ( item.stars > value ) {
+                filteredItems.push(item);
+            }
+        });
+        return filteredItems;
+    };
+});
 
 app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', '$localStorage', function($scope, $rootScope, $location, $localStorage) {
     $rootScope.$storage = $localStorage;
