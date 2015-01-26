@@ -56,10 +56,11 @@ app.factory('Product', function($http) {
 });
 
 
-app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', '$localStorage', function($scope, $rootScope, $location, $localStorage) {
+    $rootScope.$storage = $localStorage;
     $scope.submitForm = function(isValid) {
         if (isValid) {
-            $rootScope.user = $scope.user;
+            $rootScope.$storage.user = $scope.user;
             $location.path('/products');
         }
     };
@@ -67,8 +68,9 @@ app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', function($scop
 
 
 
-app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product',
-  function($scope, $rootScope, $routeParams, Product) {
+app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product', '$localStorage',
+  function($scope, $rootScope, $routeParams, Product, $localStorage) {
+    $rootScope.$storage = $localStorage;
     if (!$rootScope.itemCount) {
         $rootScope.itemCount = 0;
     }
@@ -86,6 +88,13 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
       Product.query().then(function(data) {
           $scope.products = data;
       });
+      if ($routeParams.category) {
+        console.log("catgory");
+        if (!$scope.search) {
+          $scope.search = {};
+        }
+        $scope.search.category = $routeParams.category;
+      }
     }
 }]);
 

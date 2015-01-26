@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <nav class="navbar navbar-default" ng-show="user">
+        <nav class="navbar navbar-default" ng-show="$storage.user">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -23,7 +23,18 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="#">TurboStore5000</a>
+
             </div>
+            <ul class="nav navbar-nav">
+                <input type="text" placeholder="Search by Keyword">
+                <li>
+                  <a href="/#/products?category=mens">Mens</a>
+                </li>
+                <li>
+                  <a href="/#/products?category=women">Women</a>
+                </li>
+
+              </ul>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -33,7 +44,7 @@
                   <span class="count">{{itemCount}}</span>
                 </div>
                 <div class="user">
-                  <strong>{{user.username}}</strong><br><a href="/#/login">Log out</a>
+                  <strong>{{$storage.user.username}}</strong><br><a href="/#/login">Log out</a>
                 </div>
               </ul>
             </div><!-- /.navbar-collapse -->
