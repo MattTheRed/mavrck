@@ -48,7 +48,7 @@
                   <span class="count">{{$storage.itemCount}}</span>
                 </div>
                 <div class="user">
-                  <strong>{{$storage.user.username}}</strong><br><a href="/#/login">Log out</a>
+                  <strong>{{$storage.user.username}}</strong><br><a href="/#/login" ng-click="$storage.user=undefined">Log out</a>
                 </div>
               </ul>
             </div><!-- /.navbar-collapse -->
