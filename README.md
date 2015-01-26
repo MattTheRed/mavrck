@@ -28,12 +28,13 @@ Product Page Requirements:
 -(2) filter for mens and women's products;
 -~~(3) shopping cart icon displaying number of items in the cart.~~
 - ~~4 products, each with an image, title, short description, price, 1-to-5 star rating and category (men's || women's).~~
-- ~~The customer should be able to: (1) filter the products by price, rating or category;~~
+- ~~The customer should be able to:
+  - (1) filter the products by price, rating or category;~~
     - price filter should be ranges, break into separate filter
     - star filter should be >, break into separate filter
-- ~~(2) add a product to a cart which increments count in the navigation;~~
-  --(3) rate the product on a 1-to-5 star scale;
-- ~~(4) leave a comment on a product.~~
+  - ~~(2) add a product to a cart which increments count in the navigation;~~
+  -(3) rate the product on a 1-to-5 star scale;
+  - ~~(4) leave a comment on a product.~~
 
 Bonus Items:
 - Including unit tests using Karma or Jasmine
