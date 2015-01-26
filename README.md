@@ -14,7 +14,7 @@ Please build a basic marketplace with two web pages using AngularJS, Bootstrap, 
 - ~~(1) login page~~
 - ~~(2) product page. You should build the marketplace so that it may accept a RESTful API endpoint, that has hard a coded /products route that you design.~~
 - ~~It should also be responsive to mobile browsers.~~
--- Update the header navigation; hide/show the menu
+  - Update the header navigation; hide/show the menu
 Login Page requirements:
 - ~~Form with input fields for a username, password and login button.~~
 - ~~The form should accept any username between 4-20 characters and any password 8-20 characters.~~
