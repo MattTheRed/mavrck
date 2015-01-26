@@ -71,17 +71,16 @@ app.controller('LoginCtrl', ['$scope', '$rootScope', '$location', '$localStorage
 app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product', '$localStorage',
   function($scope, $rootScope, $routeParams, Product, $localStorage) {
     $rootScope.$storage = $localStorage;
-    if (!$rootScope.itemCount) {
-        $rootScope.itemCount = 0;
+    if (!$rootScope.$storage.itemCount) {
+        $rootScope.$storage.itemCount = 0;
     }
 
     $scope.buy = function() {
-      $rootScope.itemCount++;
+      $rootScope.$storage.itemCount++;
     };
 
     if ($routeParams.productId) {
       Product.get($routeParams.productId).then(function(data){
-        console.log('here');
         $scope.product = data;
       });
     } else {
@@ -89,7 +88,6 @@ app.controller('ProductCtrl', ['$scope', '$rootScope', '$routeParams', 'Product'
           $scope.products = data;
       });
       if ($routeParams.category) {
-        console.log("catgory");
         if (!$scope.search) {
           $scope.search = {};
         }
