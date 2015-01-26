@@ -33,7 +33,7 @@ Product Page Requirements:
     - ~~price filter should be ranges, break into separate filter~~
     - ~~star filter should be >, break into separate filter~~
   - ~~(2) add a product to a cart which increments count in the navigation;~~
-  - (3) rate the product on a 1-to-5 star scale;
+  - ~~(3) rate the product on a 1-to-5 star scale;~~
   - ~~(4) leave a comment on a product.~~
 
 Bonus Items:
