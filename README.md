@@ -36,6 +36,7 @@ Product Page Requirements:
   - ~~(3) rate the product on a 1-to-5 star scale;~~
   - ~~(4) leave a comment on a product.~~
 
+
 Bonus Items:
 - Including unit tests using Karma or Jasmine
 - Adding to cart changes a Favicon to show the number of items in the cart
